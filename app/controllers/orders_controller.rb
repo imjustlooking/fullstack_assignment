@@ -1,9 +1,17 @@
 class OrdersController < ApplicationController
   def index
     @orders = DeliveryOrder.all
-    # render json: JSON.pretty_generate(@orders.as_json(:only => [ :order_id, :serving_datetime ]))
-    render json: JSON.pretty_generate(@orders.as_json)
+    render json: JSON.pretty_generate(:orders => @orders.as_json(:only => [:order_id], methods: [:delivery_date, :delivery_time]))
   end
   def show
+    @order = DeliveryOrder.where(:order_id=>params[:order_id].titleize)
+    @items = OrderItem.where(:delivery_order_id=>@order.ids)
+    render json: JSON.pretty_generate(:order => @order.as_json(include: { order_items: {
+                                                                                include: { meal: {
+                                                                                                  only: :name } },
+                                                                          only: [:quantity],
+                                                                          methods: [:total_price] } },
+                                                              only: [:order_id],
+                                                              methods: [:delivery_date, :delivery_time]))
   end
 end
