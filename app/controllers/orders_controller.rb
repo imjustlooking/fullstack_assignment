@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  def index
+  def all
     @orders = DeliveryOrder.all
     render json: JSON.pretty_generate(:orders => @orders.as_json(:only => [:order_id], methods: [:delivery_date, :delivery_time]))
   end
@@ -13,5 +13,7 @@ class OrdersController < ApplicationController
                                                                           methods: [:total_price] } },
                                                               only: [:order_id],
                                                               methods: [:delivery_date, :delivery_time]))
+  end
+  def index
   end
 end
