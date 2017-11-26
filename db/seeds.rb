@@ -7,31 +7,31 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-# Meal.destroy_all
-# DeliveryOrder.destroy_all
-#
-# 10.times do
-#   Meal.create(
-#     name: Faker::Food.unique.dish,
-#     description:
-# Faker::BackToTheFuture.unique.quote
-#   )
-# end
+Meal.destroy_all
+DeliveryOrder.destroy_all
 
-# 5.times do |i|
-#     DeliveryOrder.create(
-#       order_id: "G"+(i+1).to_s.rjust(4,'0'),
-#       serving_datetime: Faker::Time.between(DateTime.now - 1, DateTime.now)
-#     )
-# end
+10.times do
+  Meal.create(
+    name: Faker::Food.unique.dish,
+    description:
+Faker::BackToTheFuture.unique.quote
+  )
+end
 
-# OrderItem.create(delivery_order_id: 16, meal_id: 106, quantity: 3, unit_price: 700)
-# OrderItem.create(delivery_order_id: 16, meal_id: 110, quantity: 1, unit_price: 360)
-# OrderItem.create(delivery_order_id: 16, meal_id: 115, quantity: 2, unit_price: 849)
-# OrderItem.create(delivery_order_id: 17, meal_id: 107, quantity: 5, unit_price: 605)
-# OrderItem.create(delivery_order_id: 17, meal_id: 109, quantity: 1, unit_price: 500)
-# OrderItem.create(delivery_order_id: 18, meal_id: 111, quantity: 3, unit_price: 500)
-# OrderItem.create(delivery_order_id: 19, meal_id: 114, quantity: 1, unit_price: 628)
-# OrderItem.create(delivery_order_id: 19, meal_id: 113, quantity: 2, unit_price: 450)
-# OrderItem.create(delivery_order_id: 20, meal_id: 109, quantity: 1, unit_price: 500)
-# OrderItem.create(delivery_order_id: 20, meal_id: 108, quantity: 1, unit_price: 800)
+5.times do |i|
+    DeliveryOrder.create(
+      order_id: "G"+(i+1).to_s.rjust(4,'0'),
+      serving_datetime: Faker::Time.between(DateTime.now - 1, DateTime.now)
+    )
+end
+
+OrderItem.create(delivery_order_id: 1, meal_id: 1, quantity: 3, unit_price: 700)
+OrderItem.create(delivery_order_id: 1, meal_id: 1, quantity: 1, unit_price: 360)
+OrderItem.create(delivery_order_id: 1, meal_id: 2, quantity: 2, unit_price: 849)
+OrderItem.create(delivery_order_id: 2, meal_id: 2, quantity: 5, unit_price: 605)
+OrderItem.create(delivery_order_id: 2, meal_id: 3, quantity: 1, unit_price: 500)
+OrderItem.create(delivery_order_id: 3, meal_id: 3, quantity: 3, unit_price: 500)
+OrderItem.create(delivery_order_id: 4, meal_id: 3, quantity: 1, unit_price: 628)
+OrderItem.create(delivery_order_id: 4, meal_id: 6, quantity: 2, unit_price: 450)
+OrderItem.create(delivery_order_id: 5, meal_id: 8, quantity: 1, unit_price: 500)
+OrderItem.create(delivery_order_id: 5, meal_id: 9, quantity: 1, unit_price: 800)
