@@ -21,8 +21,8 @@ Additional dependencies:
 Setup:
 ---
 If you would like to see this on your local host, run git clone in a local directory.
-Create the database: Rails db:create
-Migrate the database: Rails db:migrate
-Seed the database: Rails db:seed
-Run the program: Rails S
-Launch localhost:3000 on your browser.
+* Create the database: Rails db:create
+* Migrate the database: Rails db:migrate
+* Seed the database: Rails db:seed
+* Run the program: Rails S
+* Launch localhost:3000 on your browser.
