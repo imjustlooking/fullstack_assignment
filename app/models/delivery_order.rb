@@ -13,6 +13,6 @@ class DeliveryOrder < ApplicationRecord
   serving_datetime.to_time.strftime('%Y-%m-%d') unless serving_datetime.nil?
   end
   def delivery_time
-  serving_datetime.to_time.strftime('%l:%M %p') unless serving_datetime.nil?
+  (serving_datetime-30*60).to_time.strftime('%l:%M')+'-'+serving_datetime.to_time.strftime('%l:%M %p') unless serving_datetime.nil?
   end
 end
