@@ -1,6 +1,5 @@
 class DeliveryOrder < ApplicationRecord
-  validates_presence_of :serving_datetime
-  validates_presence_of :order_id
+  validates_presence_of :serving_datetime, :order_id
   has_many :order_items
   # def as_json(options={})
   #   super(include: { order_items: {
