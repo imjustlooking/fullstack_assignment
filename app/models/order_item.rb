@@ -6,4 +6,7 @@ class OrderItem < ApplicationRecord
   def total_price
     quantity * unit_price
   end
+  def name
+    self.meal.name
+  end
 end

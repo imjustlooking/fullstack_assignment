@@ -7,10 +7,8 @@ class OrdersController < ApplicationController
     @order = DeliveryOrder.where(:order_id=>params[:order_id].upcase)
     @items = OrderItem.where(:delivery_order_id=>@order.ids)
     render json: JSON.pretty_generate(:order => @order.as_json(include: { order_items: {
-                                                                                include: { meal: {
-                                                                                                  only: :name } },
                                                                           only: [:quantity],
-                                                                          methods: [:total_price] } },
+                                                                          methods: [:total_price, :name] } },
                                                               only: [:order_id],
                                                               methods: [:delivery_date, :delivery_time]))
   end
