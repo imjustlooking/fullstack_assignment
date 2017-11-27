@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   get 'orders', to: 'orders#all', defaults: { format: 'json' }
   get 'orders/:order_id', to: 'orders#show', defaults: { format: 'json' }
-
+  get 'orders/:order_id/feedbacks', to: 'orders#feedback'
     # resources :orders
     # get 'orders/index'
   root 'orders#index'
