@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   def all
-    @orders = DeliveryOrder.all
+    @orders = DeliveryOrder.all.sort_by {|u| u.serving_datetime}
     render json:
     JSON.pretty_generate(
       :orders => @orders.as_json(
