@@ -10,4 +10,7 @@ class OrderItem < ApplicationRecord
   def name
     self.meal.name
   end
+  def order_item_id
+    self.meal.id
+  end
 end
